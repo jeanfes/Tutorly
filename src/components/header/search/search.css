@@ -1,0 +1,28 @@
+.input-wrapper{
+  position: relative;
+}
+
+.input-wrapper input {
+  background: rgb(240, 240, 240);
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 6px;
+  color: black;
+}
+
+.input-wrapper input:focus {
+  outline-style: solid;
+  outline-color: var(--secundary-color);
+}
+
+#delete-icon{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 35%;
+  right: 11px;
+  filter: invert(40%);
+  cursor: pointer;
+}

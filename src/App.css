@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+  
+  :root {
+    --primary-color: #3a0ca3;
+    --secundary-color: #f2c955;
+    --text-color1: #ffffff;
+    --text-color2: #1f152c;
+    --text-color3: #626064;
+    --text-color4: #fe7b73;
+  }
+  
+  html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
+    min-width: 320px;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 10px;
+    /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--primary-color);
+    /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--secundary-color);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid var(--secundary-color);
+    /* creates padding around scroll thumb */
+  }
