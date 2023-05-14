@@ -6,12 +6,13 @@ import Settings from "../../assets/config.png";
 import LogoTema from "../../assets/theme.png";
 import LogoUsuario from "../../assets/usuario.png";
 import { Search } from "./search/search";
-
+import { useNavigate } from "react-router-dom";
 export function Header() {
     const [classNotifications, setClaseNotifications] = useState("inactive");
     const [classProfile, setClaseProfile] = useState("inactive");
     const refNotifications = useRef(null);
     const refProfile = useRef(null);
+    const navigate = useNavigate();
     function toggleClassNotifications() {
         if (classNotifications === "inactive") {
             setClaseNotifications("");
@@ -27,6 +28,9 @@ export function Header() {
         } else {
             setClaseProfile("inactive");
         }
+    }
+    function handleClickLogout() {
+        navigate("/");
     }
     function handleClickInside(event) {
         event.stopPropagation();
@@ -93,7 +97,7 @@ export function Header() {
                                 <p>Tema</p>
                             </div>
                         </li>
-                        <li id="log-out_container">
+                        <li onClick={handleClickLogout} id="log-out_container">
                             <img src={LogOut} />
                             <p>Cerrar sesión</p>
                         </li>

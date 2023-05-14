@@ -1,7 +1,7 @@
 import "../styles/sesion.css";
 import Logo from "../assets/logo.png";
 import ArrowBack from "../assets/arrowback.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useRef, useState, useEffect } from "react";
 export function Iniciarsesion() {
     const [showEmailForm, setShowEmailForm] = useState(true);
@@ -10,6 +10,7 @@ export function Iniciarsesion() {
     const textError = useRef(null);
     const buttonNextRef = useRef(null);
     const buttonLoginRef = useRef(null);
+    const navigate = useNavigate();
     const handleContinueButton = () => {
         const email = inputEmailRef.current.value;
         const emailValidator = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar correos electrónicos
@@ -25,7 +26,7 @@ export function Iniciarsesion() {
         setShowEmailForm(true);
     };
     const handleLogin = () => {
-        window.location.href = `/user`;
+        navigate("/user");
     };
     useEffect(() => {
         function handleKeyPress(event) {
